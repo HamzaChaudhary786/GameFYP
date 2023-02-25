@@ -7,7 +7,7 @@ import { useGlobalContext } from './Context'
 import { useNavigate } from "react-router-dom"
 
 const Step6_HeroSection = () => {
-    const { game } = useGlobalContext();
+    const { breed } = useGlobalContext();
 
     const [values, setValues] = useState(true);
     let navigate =useNavigate();
@@ -43,7 +43,7 @@ const Step6_HeroSection = () => {
                                 {
 
 
-                                    game.map((item) => {
+                                    breed.map((item) => {
                                         const { id, title, description, poster, price, names, image, cond } = item;
 
 

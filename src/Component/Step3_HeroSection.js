@@ -150,7 +150,7 @@ const Step3_HeroSection = () => {
                         <div className=' grid-cols-3 w-auto md:w-[70%]  grid justify-items-center items-center mt-2'>
                             <Link to="/step3" onClick={TopPage}>
 
-                                <div>
+                                <div >
                                     <h1>Father</h1>
                                     <h2>This Rabby Will Be Father</h2>
                                     <div className='bg-gray-900 bg-opacity-30 h-44 w-40 text-red-600 grid justify-items-center items-center rounded'>

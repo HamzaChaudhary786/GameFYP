@@ -18,6 +18,9 @@ const AppContext = React.createContext();
 const AppProvider = (({ children }) => {
 
     const [game , setGame]=useState([]);
+    const [breed , setBreed]=useState([]);
+    const[coll , setColl]=useState([]);
+    const[feed , setFeed]=useState([]);
     const [iserror , setIsError]=useState({
         show:false ,
         msg:""
@@ -32,7 +35,10 @@ const AppProvider = (({ children }) => {
 
             if(data.Response==="True")
             {
-                setGame(data.Search)
+                setGame(data.Search);
+                setBreed(data.Breed);
+                setColl(data.Colection);
+                setFeed(data.Feeding);
 
             }
             else
@@ -57,7 +63,7 @@ const AppProvider = (({ children }) => {
         getGame(api_url);
     },[])
 
-    return <AppContext.Provider value={{game}} >
+    return <AppContext.Provider value={{game , breed  ,coll ,feed}} >
         {children}
 
     </AppContext.Provider>

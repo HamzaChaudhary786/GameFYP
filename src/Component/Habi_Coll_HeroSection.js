@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 
 const Habi_Coll_HeroSection = () => {
 
-    const { game } = useGlobalContext()
+    const { coll } = useGlobalContext()
     return (
         <>
             <div>
@@ -54,31 +54,33 @@ const Habi_Coll_HeroSection = () => {
                                 {
 
 
-                                    game.map((item) => {
+                                    coll.map((item) => {
                                         const { id, title, description, poster, price, names } = item;
                                         return (
                                             <>
                                                 {
                                                     names.toLowerCase() == "habi" ?
 
-                                                        <div >
-                                                            <div className='grid bg-white border-2 h-64 w-52 justify-center  '>
-                                                                <img src={poster} className=' h-44 w-44 rounded' />
-                                                                <div >{id}</div>
-                                                                <div>{title}</div>
-                                                                <div>{description}</div>
-                                                            </div>
-                                                            <div className=' flex rounded-full border-black border-2 p-2 bg-white'>
-                                                                <div>
-                                                                    <h1>Price</h1>
-                                                                    <h1>{price}</h1>
+                                                        <Link to="">
+                                                            <div >
+                                                                <div className='grid bg-white border-2 h-64 w-52 justify-center  '>
+                                                                    <img src={poster} className=' h-44 w-44 rounded' />
+                                                                    <div >{id}</div>
+                                                                    <div>{title}</div>
+                                                                    <div>{description}</div>
                                                                 </div>
-                                                                <div className='ml-4'>
-                                                                    <h1>Time </h1>
-                                                                    <h1>Snappy 10m</h1>
+                                                                <div className=' flex rounded-full border-black border-2 p-2 bg-white'>
+                                                                    <div>
+                                                                        <h1>Price</h1>
+                                                                        <h1>{price}</h1>
+                                                                    </div>
+                                                                    <div className='ml-4'>
+                                                                        <h1>Time </h1>
+                                                                        <h1>Snappy 10m</h1>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        </Link>
                                                         :
                                                         console.log(names)
                                                 }
