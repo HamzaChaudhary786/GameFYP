@@ -1,16 +1,18 @@
 import React from 'react'
-import Feed_Step3_HeroSection from '../Component/Feed_Step3_HeroSection'
 import Footer from '../Component/Footer'
 import Navbar from '../Component/Navbar'
+import NFT_HeroSection from '../Component/NFT_HeroSection'
 
-const Feed_Step3 = () => {
+const Sell_NFT = () => {
     return (
         <>
+
             <Navbar />
-            <Feed_Step3_HeroSection />
+            <NFT_HeroSection />
             <Footer />
+
         </>
     )
 }
 
-export default Feed_Step3
+export default Sell_NFT

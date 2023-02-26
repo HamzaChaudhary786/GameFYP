@@ -19,7 +19,8 @@ import Breed_Step7 from './Pages/Breed_Step7';
 import Feed_Step1 from './Pages/Feed_Step1';
 import Feed_Step2_HeroSection from './Component/Feed_Step2_HeroSection';
 import Feed_Step2 from './Pages/Feed_Step2';
-import Feed_Step3 from './Pages/Feed_Step3';
+import Feed_Baby from './Pages/Feed_Baby';
+import Sell_NFT from './Pages/Sell_NFT';
 
 function App() {
   return (
@@ -43,7 +44,8 @@ function App() {
         <Route path='/feedstep1' element={<Feed_Step1 />} />
         <Route path='/feedstep2' element={<Feed_Step2 />} />
 
-        <Route path='/feedstep3' element={<Feed_Step3 />} />
+        <Route path='/feedbaby' element={<Feed_Baby />} />
+        <Route path='/nftsell' element={<Sell_NFT />} />
 
         {/* <Route path="*" element={<Error/>}/> */}
 

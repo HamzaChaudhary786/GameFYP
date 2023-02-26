@@ -21,6 +21,7 @@ const AppProvider = (({ children }) => {
     const [breed , setBreed]=useState([]);
     const[coll , setColl]=useState([]);
     const[feed , setFeed]=useState([]);
+    const [level , setLevel]=useState([]);
     const [iserror , setIsError]=useState({
         show:false ,
         msg:""
@@ -39,6 +40,7 @@ const AppProvider = (({ children }) => {
                 setBreed(data.Breed);
                 setColl(data.Colection);
                 setFeed(data.Feeding);
+                setLevel(data.Levels)
 
             }
             else
@@ -63,7 +65,7 @@ const AppProvider = (({ children }) => {
         getGame(api_url);
     },[])
 
-    return <AppContext.Provider value={{game , breed  ,coll ,feed}} >
+    return <AppContext.Provider value={{game , breed  ,coll ,feed ,level}} >
         {children}
 
     </AppContext.Provider>

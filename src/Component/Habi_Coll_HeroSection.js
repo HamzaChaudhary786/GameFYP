@@ -98,7 +98,7 @@ const Habi_Coll_HeroSection = () => {
                                 <Link to="/feedstep1">
                                     <button className=' bg-indigo-700 text-white h-16 w-48'>Feed</button>
                                 </Link>
-                                <Link to="">
+                                <Link to="/nftsell">
                                     <button className=' bg-indigo-700 text-white h-16 w-48'>Sell NFT</button>
                                 </Link>
 

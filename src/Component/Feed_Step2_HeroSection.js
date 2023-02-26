@@ -14,6 +14,10 @@ import cont from "../Assets/contact.png"
 import { useGlobalContext } from './Context'
 const Feed_Step2_HeroSection = () => {
 
+   
+
+    
+
     const { coll, feed } = useGlobalContext();
 
     const DownPage = () => {
@@ -23,9 +27,6 @@ const Feed_Step2_HeroSection = () => {
     const TopPage = () => {
         window.scrollTo(500, 380)
     }
-
-    const [values, setValues] = useState(true);
-
 
 
 
@@ -79,25 +80,13 @@ const Feed_Step2_HeroSection = () => {
 
                                     let ClickFunc = () => {
 
-
-
-
-                                        if (values === true) {
-                                            let pic = document.getElementById("pic").innerHTML = `<img src= \"${poster}\" > `
-                                            setValues(false);
-                                            window.scrollTo(500, 1400)
-
-
-                                        }
-                                        else {
-                                            let pic1 = document.getElementById("pic1").innerHTML = `<img src= \"${poster}\" > `
-                                            setValues(true)
-
-                                        }
-
+                                        let pic = document.getElementById("pic").innerHTML = `<img src= \"${poster}\" > `
+                                        window.scrollTo(500, 1400)
 
 
                                     }
+
+                                  
 
 
 
@@ -161,9 +150,7 @@ const Feed_Step2_HeroSection = () => {
                 </div>
 
             </div>
-            <div>
-                <Footer />
-            </div>
+
 
 
 
@@ -171,9 +158,7 @@ const Feed_Step2_HeroSection = () => {
 
 
 
-            <div className=' mt-4'>
-                <Navbar />
-            </div>
+
             <div className=' grid justify-items-center items-center mt-8'>
 
                 <div className=' grid grid-cols-3   justify-items-center items-center bg-fuchsia-500 h-[200px] w-[95%] rounded'>
@@ -231,6 +216,12 @@ const Feed_Step2_HeroSection = () => {
                                 </div>
                             </div>
                         </div>
+                        <Link to="/feedbaby" className='mt-6 text-white font-semibold text-lg italic'>
+                            <button className=' bg-indigo-700 h-16 w-56  rounded-lg'  >
+                                Feed Now
+
+                            </button>
+                        </Link>
                     </div>
 
 
@@ -269,7 +260,7 @@ const Feed_Step2_HeroSection = () => {
 
 
                     <div className='w-[98%] h-auto md:w-[80%] bg-cyan-400 text-center rounded p-4  ' >
-                        <h1 className=' mt-2 font-bold text-2xl   '>Breed</h1>
+                        <h1 className=' mt-2 font-bold text-2xl   '>Select Carrot deal of Your Choice</h1>
                         <div className=' flex mt-6 justify-center'>
                             <div className=' h- w-16 bg-pink-600 '></div>
                             <div className=' h-2 w-16 bg-pink-300'></div>
@@ -281,35 +272,36 @@ const Feed_Step2_HeroSection = () => {
                     <div className='w-[98%] md:w-[80%] bg-cyan-400 grid grid-cols-2 lg:grid-cols-4 justify-items-center items-center   rounded p-2 gap-4 '>
                         {
                             feed.map((item) => {
-                                const { id, title, description, poster, price } = item;
-                            
+
+                                const { title, poster, price } = item;
+     
+                                
+                                let ClickFunc1 = () => {
+
+                                    let pic = document.getElementById("pic1").innerHTML = `<img src= \"${poster}\" > `
+                                    window.scrollTo(500, 1400)
+
+
+                                }
+
+
 
                                 return (
                                     <>
 
 
-                                        <div className=' hover:scale-105 ease-in-out duration-500 ' >
+                                        <div className=' hover:scale-105 ease-in-out duration-500 ' onClick={ClickFunc1} >
                                             <div className='grid  bg-white border-2 h-64 w-52 justify-center rounded  '>
                                                 <img src={poster} className=' h-44 w-44 rounded' />
                                                 <div className='grid grid-cols-2 justify-items-end'>
                                                     <div className=' text-center'>
-                                                        <div >{id}</div>
                                                         <div>{title}</div>
-                                                        <div>{description}</div>
+                                                        <div>{price}</div>
                                                     </div>
-                                                  
+
                                                 </div>
                                             </div>
-                                            <div className=' flex rounded-full border-black border-2 p-2 bg-white'>
-                                                <div>
-                                                    <h1>Price</h1>
-                                                    <h1>{price}</h1>
-                                                </div>
-                                                <div className='ml-4'>
-                                                    <h1>Time </h1>
-                                                    <h1>Snappy 10m</h1>
-                                                </div>
-                                            </div>
+
                                         </div>
                                     </>
                                 )
